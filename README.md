@@ -50,7 +50,7 @@ Example verification output:
 
 ```text
 valid: 4 records across 2 sessions
-sha256: 8a3c…
+sha256: 5d5e424d…
 ```
 
 Example replay output:
