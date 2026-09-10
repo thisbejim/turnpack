@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "turnpack"
+version = "0.1.0"
+description = "Deterministic, provider-neutral cassettes for replaying multi-turn LLM workloads"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+  { name = "James Childs-Maidment", email = "10917363+thisbejim@users.noreply.github.com" },
+]
+keywords = [
+  "llm",
+  "inference",
+  "benchmarking",
+  "workload-replay",
+  "multi-turn",
+  "openai-compatible",
+  "vllm",
+  "sglang",
+  "testing",
+  "developer-tools",
+  "local-first",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Testing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.15,<2",
+  "pytest>=8.3,<9",
+  "ruff>=0.11,<1",
+]
+
+[project.urls]
+Homepage = "https://github.com/thisbejim/turnpack"
+Repository = "https://github.com/thisbejim/turnpack"
+Issues = "https://github.com/thisbejim/turnpack/issues"
+
+[project.scripts]
+turnpack = "turnpack.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src/turnpack"]

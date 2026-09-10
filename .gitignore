@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+coverage.xml
+.coverage
+workload.turnpack.jsonl
+*.manifest.json
+*.results.jsonl
