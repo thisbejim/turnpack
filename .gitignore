@@ -9,6 +9,6 @@ dist/
 *.egg-info/
 coverage.xml
 .coverage
-workload.turnpack.jsonl
+/workload.turnpack.jsonl
 *.manifest.json
 *.results.jsonl
